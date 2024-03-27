@@ -42,6 +42,11 @@ public class Login extends javax.swing.JFrame {
         lblPassword.setText("Contraseña");
 
         jPassword.setText("jPasswordField1");
+        jPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jPasswordFocusGained(evt);
+            }
+        });
 
         lblLogin.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -110,6 +115,10 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Usuario y/o contraseña incorrectos");
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void jPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordFocusGained
+        this.jPassword.setText("");
+    }//GEN-LAST:event_jPasswordFocusGained
 
     /**
      * @param args the command line arguments
