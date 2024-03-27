@@ -4,6 +4,8 @@
  */
 package lab1tpo3;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Zully
@@ -102,10 +104,10 @@ public class Login extends javax.swing.JFrame {
         String password = new String( jPassword.getPassword());
         
         if(mail.equals("alumno@ulp.edu.ar") && password.equals("12345678")){
-            System.out.println("funciona");
+            JOptionPane.showMessageDialog(this, "Bienvenidx");
         }
         else {
-            System.out.println("no funciona");
+            JOptionPane.showMessageDialog(this, "Usuario y/o contraseña incorrectos");
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
