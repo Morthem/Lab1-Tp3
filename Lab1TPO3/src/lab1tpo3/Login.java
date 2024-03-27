@@ -35,8 +35,6 @@ public class Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMail.setText("jTextField1");
-
         lblMail.setText("Mail");
 
         lblPassword.setText("Contraseña");
@@ -47,7 +45,12 @@ public class Login extends javax.swing.JFrame {
         lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblLogin.setText("Login");
 
-        btnRegistrar.setText("jButton1");
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -69,7 +72,7 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE))
                         .addGap(64, 64, 64))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(169, Short.MAX_VALUE)
+                .addContainerGap(164, Short.MAX_VALUE)
                 .addComponent(btnRegistrar)
                 .addGap(158, 158, 158))
         );
@@ -93,6 +96,18 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        String mail = jMail.getText();
+        String password = new String( jPassword.getPassword());
+        
+        if(mail.equals("alumno@ulp.edu.ar") && password.equals("12345678")){
+            System.out.println("funciona");
+        }
+        else {
+            System.out.println("no funciona");
+        }
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     /**
      * @param args the command line arguments
