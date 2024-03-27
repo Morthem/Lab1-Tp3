@@ -4,6 +4,8 @@
  */
 package lab1tpo3;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Zully
@@ -40,6 +42,11 @@ public class Login extends javax.swing.JFrame {
         lblPassword.setText("Contraseña");
 
         jPassword.setText("jPasswordField1");
+        jPassword.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jPasswordFocusGained(evt);
+            }
+        });
 
         lblLogin.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         lblLogin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -102,12 +109,16 @@ public class Login extends javax.swing.JFrame {
         String password = new String( jPassword.getPassword());
         
         if(mail.equals("alumno@ulp.edu.ar") && password.equals("12345678")){
-            System.out.println("funciona");
+            JOptionPane.showMessageDialog(this, "Bienvenidx");
         }
         else {
-            System.out.println("no funciona");
+            JOptionPane.showMessageDialog(this, "Usuario y/o contraseña incorrectos");
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void jPasswordFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordFocusGained
+        this.jPassword.setText("");
+    }//GEN-LAST:event_jPasswordFocusGained
 
     /**
      * @param args the command line arguments
